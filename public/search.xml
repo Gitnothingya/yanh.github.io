@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>博客搭建</title>
+    <url>/yanh.github.io/2022/07/14/hexo/</url>
+    <content><![CDATA[<p>​		配置博客过程中遇到了许多问题，不少知识点，在该文档中进行总结，便于自己日后查看，重新配置。</p>
+<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a><code>hexo</code></h1><p>​		<code>npm</code> 命令与<code>hexo</code>自带命令。</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install hexo </span><br><span class="line">//到指定文件夹运行命令</span><br><span class="line"></span><br><span class="line">hexo init</span><br><span class="line">//初始化博客框架</span><br><span class="line"></span><br><span class="line">hexo g </span><br><span class="line">//生成网页</span><br><span class="line"></span><br><span class="line">hexo s </span><br><span class="line">//本地查看网站</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line">//部署博客到github上，要两次才换主题，还是有延迟？</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;title&quot;</span><br><span class="line">//生成新文章</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: title</span><br><span class="line">date: 2022-7-14 9:44:13</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line">//front matter 页面属性？</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new draft &quot;draft title&quot;</span><br><span class="line">//生成草稿，草稿不会被渲染</span><br><span class="line"></span><br><span class="line">hexo new page &quot;ppage title&quot;</span><br><span class="line">//生成纯页面</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong><code>numjucks</code>语言</strong>编写模板</p>
+<p><code>yaml</code>语法编写<code>front matter</code></p>
+<h1 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h1><h2 id="ssh-key配置"><a href="#ssh-key配置" class="headerlink" title="ssh-key配置"></a><code>ssh-key</code>配置</h2><h2 id="config-yml配置"><a href="#config-yml配置" class="headerlink" title="_config.yml配置"></a><code>_config.yml</code>配置</h2><ul>
+<li><code>url \ root</code></li>
+<li><code>title \ author</code></li>
+<li><code>deploy : type \ repo \ branch</code></li>
+</ul>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>直接在 <code>\themes</code>文件夹下进行<code>clone</code>然后直接修改克隆下的文件夹，例如对于<code>NexT</code>主题</p>
+<p><code>git clone git@github.com:theme-next/hexo-theme-next.git </code></p>
+<p>然后将文件夹名由<code>hexo-theme-next</code> 修改为<code>next</code></p>
+<p>注意在博客框架的<code>_config.yml</code>的主题类型</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//next</span><br><span class="line">https://github.com/theme-next/hexo-theme-next</span><br><span class="line"></span><br><span class="line">//yilia-plus</span><br><span class="line">https://github.com/JoeyBling/hexo-theme-yilia-plus</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><code>Adguard</code>插件导致主题更新延迟？</p>
+</blockquote>
+<h1 id="问题-警告、报错"><a href="#问题-警告、报错" class="headerlink" title="问题(警告、报错)"></a>问题(警告、报错)</h1><blockquote>
+<ul>
+<li>npm WARN config global <code>--global</code>, <code>--local</code> are deprecated. Use <code>--location=global</code> instead.</li>
+</ul>
+<p><strong>solution:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;# 以管理员身份运行</span><br><span class="line">&gt;npm i -g npm-windows-upgrade  # cmd</span><br><span class="line">&gt;npm-windows-upgrade  </span><br><span class="line">&gt;# 然后选择最新版本</span><br><span class="line">&gt;# 第二个命令出现后如果出现报错，按照提示运行给出命令再次运行第二个即可</span><br><span class="line">&gt;Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force # 管理员运行powershell</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+]]></content>
+      <categories>
+        <category>learn</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>npm</tag>
+        <tag>git</tag>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/yanh.github.io/2022/07/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Test-for-function"><a href="#Test-for-function" class="headerlink" title="Test for function"></a>Test for function</h2><h2 id="图片设置与预览"><a href="#图片设置与预览" class="headerlink" title="图片设置与预览"></a>图片设置与预览</h2><p><img src="/yanh.github.io/images%5C%E4%B8%BD%E5%A1%94.jpg" alt="丽塔"></p>
+<img src="/yanh.github.io/images/%E4%B8%BD%E5%A1%94.jpg" class="[丽塔]" title="title text" alt="alt text">
+
+
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>test_cat</category>
+      </categories>
+      <tags>
+        <tag>test_tags</tag>
+      </tags>
+  </entry>
+</search>
