@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/yanh.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/yanh.github.io/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/yanh.github.io/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/yanh.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/yanh.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/yanh.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/yanh.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta name="description" content="配置博客过程中遇到了许多问题，不少知识点，在该文档中进行总结，便于自己日后查看，重新配置。 暂时搁置搭建，使用语雀进行学习记录 hexonpm 命令与 hexo自带命令。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客搭建">
+<meta property="og:url" content="https://github.com/Gitnothingya/yanh.github.io/2022/07/14/hexo/index.html">
+<meta property="og:site_name" content="Nothing here">
+<meta property="og:description" content="配置博客过程中遇到了许多问题，不少知识点，在该文档中进行总结，便于自己日后查看，重新配置。 暂时搁置搭建，使用语雀进行学习记录 hexonpm 命令与 hexo自带命令。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-14T01:28:54.204Z">
+<meta property="article:modified_time" content="2022-07-29T15:02:14.856Z">
+<meta property="article:author" content="yanh">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="npm">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="node">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/Gitnothingya/yanh.github.io/2022/07/14/hexo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>博客搭建 | Nothing here</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/yanh.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Nothing here</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/yanh.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/yanh.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/yanh.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/yanh.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/yanh.github.io/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/yanh.github.io/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/Gitnothingya/yanh.github.io/2022/07/14/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/yanh.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="yanh">
+      <meta itemprop="description" content="没什么好说的，祝大家幸福">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nothing here">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          博客搭建
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-14 09:28:54" itemprop="dateCreated datePublished" datetime="2022-07-14T09:28:54+08:00">2022-07-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-29 23:02:14" itemprop="dateModified" datetime="2022-07-29T23:02:14+08:00">2022-07-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/yanh.github.io/categories/learn/" itemprop="url" rel="index"><span itemprop="name">learn</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/yanh.github.io/categories/learn/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>配置博客过程中遇到了许多问题，不少知识点，在该文档中进行总结，便于自己日后查看，重新配置。</p>
+<p><strong>暂时搁置搭建，使用语雀进行学习记录</strong></p>
+<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a><code>hexo</code></h1><p><code>npm</code> 命令与 <code>hexo</code>自带命令。</p>
+<span id="more"></span>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install hexo </span><br><span class="line">//到指定文件夹运行命令</span><br><span class="line"></span><br><span class="line">hexo init</span><br><span class="line">//初始化博客框架</span><br><span class="line"></span><br><span class="line">hexo g </span><br><span class="line">//生成网页</span><br><span class="line"></span><br><span class="line">hexo s </span><br><span class="line">//本地查看网站</span><br><span class="line"></span><br><span class="line">hexo d</span><br><span class="line">//部署博客到github上，要两次才换主题，还是有延迟？</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;title&quot;</span><br><span class="line">//生成新文章</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: title</span><br><span class="line">date: 2022-7-14 9:44:13</span><br><span class="line"><span class="section">tags:</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line">//front matter 页面属性？</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft &quot;draft title&quot;</span><br><span class="line">//生成草稿，草稿不会被渲染</span><br><span class="line"></span><br><span class="line">hexo new page &quot;ppage title&quot;</span><br><span class="line">//生成纯页面</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>numjucks</code>语言</strong>编写模板</p>
+<p><code>yaml</code>语法编写 <code>front matter</code></p>
+<h1 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h1><h2 id="ssh-key配置"><a href="#ssh-key配置" class="headerlink" title="ssh-key配置"></a><code>ssh-key</code>配置</h2><h2 id="config-yml配置"><a href="#config-yml配置" class="headerlink" title="_config.yml配置"></a><code>_config.yml</code>配置</h2><ul>
+<li><code>url \ root</code></li>
+<li><code>title \ author</code></li>
+<li><code>deploy : type \ repo \ branch</code></li>
+</ul>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>直接在 <code>\themes</code>文件夹下进行 <code>clone</code>然后直接修改克隆下的文件夹，例如对于 <code>NexT</code>主题</p>
+<p><code>git clone git@github.com:theme-next/hexo-theme-next.git </code></p>
+<p>然后将文件夹名由 <code>hexo-theme-next</code> 修改为 <code>next</code></p>
+<p>注意在博客框架的 <code>_config.yml</code>的主题类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//next</span><br><span class="line">https://github.com/theme-next/hexo-theme-next</span><br><span class="line"></span><br><span class="line">//yilia-plus</span><br><span class="line">https://github.com/JoeyBling/hexo-theme-yilia-plus</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>Adguard</code>插件导致主题更新延迟？</p>
+</blockquote>
+<h1 id="问题-警告、报错"><a href="#问题-警告、报错" class="headerlink" title="问题(警告、报错)"></a>问题(警告、报错)</h1><blockquote>
+<ul>
+<li>npm WARN config global <code>--global</code>, <code>--local</code> are deprecated. Use <code>--location=global</code> instead.</li>
+</ul>
+<p><strong>solution:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 以管理员身份运行</span><br><span class="line">npm i -g npm-windows-upgrade  # cmd</span><br><span class="line">npm-windows-upgrade  </span><br><span class="line"># 然后选择最新版本</span><br><span class="line"># 第二个命令出现后如果出现报错，按照提示运行给出命令再次运行第二个即可</span><br><span class="line">Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force # 管理员运行powershell</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h1 id="文档编写"><a href="#文档编写" class="headerlink" title="文档编写"></a>文档编写</h1><p>文档头信息</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">title: 文章标题</span><br><span class="line">date: 2020-09-07 09:25:00  文章创建发布时间，未指明时会有内部记录文档添加进来的时间</span><br><span class="line">author: 文章作者</span><br><span class="line">img: 文章特征图路径，未尝试</span><br><span class="line">top: 文章置顶 true / false</span><br><span class="line">cover: 文章是否加入首页轮播封面？未尝试 true / false</span><br><span class="line">coverImg: 文章在首页轮播封面需要显示的图片路径，如果没有，默认使用文章的特色图片</span><br><span class="line">password: 文章阅读密码，必须是SHA256加密后的密码，使用前需要在主题的config.yml激活verifyPassword选项</span><br><span class="line">toc: 是否开启TOC ， true / false</span><br><span class="line">mathjax: false 是否开启数字公式支持，需要在主题的<span class="emphasis">_config.yml文件中一同开启</span></span><br><span class="line"><span class="emphasis">description: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</span></span><br><span class="line"><span class="emphasis">categories: </span></span><br><span class="line"><span class="emphasis">- Markdown</span></span><br><span class="line"><span class="emphasis">- ... 使用多级目录，</span></span><br><span class="line"><span class="emphasis">tags:</span></span><br><span class="line"><span class="emphasis">  - Typora</span></span><br><span class="line"><span class="emphasis">  - Markdown</span></span><br><span class="line"><span class="emphasis">  使用多个标签</span></span><br><span class="line"><span class="emphasis">注意同一文章只有一种（多级）目录，可以多个标签</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/yanh.github.io/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/yanh.github.io/tags/npm/" rel="tag"># npm</a>
+              <a href="/yanh.github.io/tags/git/" rel="tag"># git</a>
+              <a href="/yanh.github.io/tags/node/" rel="tag"># node</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/yanh.github.io/2022/07/14/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/yanh.github.io/2022/07/29/CS61A-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="next" title="CS61A 学习体会">
+      CS61A 学习体会 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo"><span class="nav-number">1.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.</span> <span class="nav-text">部署博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-key%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">ssh-key配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#config-yml%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">_config.yml配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98"><span class="nav-number">2.3.</span> <span class="nav-text">主题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-%E8%AD%A6%E5%91%8A%E3%80%81%E6%8A%A5%E9%94%99"><span class="nav-number">3.</span> <span class="nav-text">问题(警告、报错)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E7%BC%96%E5%86%99"><span class="nav-number">4.</span> <span class="nav-text">文档编写</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="yanh"
+      src="/yanh.github.io/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">yanh</p>
+  <div class="site-description" itemprop="description">没什么好说的，祝大家幸福</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/yanh.github.io/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/yanh.github.io/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/yanh.github.io/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Gitnothingya" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Gitnothingya"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/yanh.github.io/Chinayanhan@outlook.com" title="E-Mail → Chinayanhan@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.yuque.com/u27671994" title="yuque → https:&#x2F;&#x2F;www.yuque.com&#x2F;u27671994" rel="noopener" target="_blank"><i class="fa custom yuque fa-fw"></i>yuque</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022-07 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yanh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">3k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/yanh.github.io/lib/anime.min.js"></script>
+  <script src="/yanh.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/yanh.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/yanh.github.io/js/utils.js"></script>
+
+<script src="/yanh.github.io/js/motion.js"></script>
+
+
+<script src="/yanh.github.io/js/schemes/pisces.js"></script>
+
+
+<script src="/yanh.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/yanh.github.io/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
