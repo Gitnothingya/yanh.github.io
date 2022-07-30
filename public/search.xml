@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Hexo Test</title>
+      <link href="/yanh.github.io/2022/07/30/Hexo-Test/"/>
+      <url>/yanh.github.io/2022/07/30/Hexo-Test/</url>
+      
+        <content type="html"><![CDATA[<p>hexo 的编辑虽然支持markdown语法但是还是有较多问题，所以还是参考官方文档进行hexo自身的语法测试和markdown进行比较。摘出比较好的进行应用</p><span id="more"></span><h1 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h1><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># markdown语法</span></span><br><span class="line"></span><br><span class="line"><span class="section">#</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> learn </tag>
+            
+            <tag> blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CS61A 学习体会</title>
       <link href="/yanh.github.io/2022/07/29/CS61A-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
       <url>/yanh.github.io/2022/07/29/CS61A-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
