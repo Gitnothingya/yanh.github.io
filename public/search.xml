@@ -71,6 +71,9 @@
 <span id="more"></span>
 
 <h2 id="Test-for-function"><a href="#Test-for-function" class="headerlink" title="Test for function"></a>Test for function</h2><h2 id="图片设置与预览"><a href="#图片设置与预览" class="headerlink" title="图片设置与预览"></a>图片设置与预览</h2><img src="/yanh.github.io/images/%E4%B8%BD%E5%A1%94.jpg" class="[丽塔]" title="title text" alt="alt text">
+
+<img src="https://raw.githubusercontent.com/Gitnothingya/PicGoImg/main/blog/image-20230722221127659.png" class="[丽塔]" title="title text" alt="alt text">
+
 <p><img src="https://raw.githubusercontent.com/Gitnothingya/PicGoImg/main/blog/image-20230722221127659.png" alt="image-20230722221127659"></p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
